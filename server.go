@@ -10,10 +10,10 @@ import (
 	_ "github.com/lib/pq"
 	"google.golang.org/grpc"
 
-	"lms-user-service/internal/config"
-	"lms-user-service/internal/pkg/db/postgres"
-	"lms-user-service/internal/pkg/db/redis"
-	"lms-user-service/internal/route"
+	"lms-user-services/internal/config"
+	"lms-user-services/internal/pkg/db/postgres"
+	"lms-user-services/internal/pkg/db/redis"
+	"lms-user-services/internal/route"
 )
 
 const defaultPort = "8000"
@@ -30,7 +30,7 @@ func main() {
 	}
 
 	// init log
-	log := log.New(os.Stdout, "Essentials : ", log.LstdFlags|log.Lmicroseconds|log.Lshortfile)
+	log := log.New(os.Stdout, "LMS : ", log.LstdFlags|log.Lmicroseconds|log.Lshortfile)
 
 	// create postgres database connection
 	db, err := postgres.Open()
